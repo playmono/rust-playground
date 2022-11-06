@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  rust_playground:
+    build: .
+    env_file:
+      - ./.env
+    working_dir: /usr/app/
+    entrypoint: /bin/ash
+    volumes:
+      - ../app:/usr/app
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
